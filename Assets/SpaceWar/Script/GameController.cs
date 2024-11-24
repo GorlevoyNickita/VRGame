@@ -2,12 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameController : MonoBehaviour
 {
     [SerializeField] private Image timerImage;
     [SerializeField] private float gameTime;
     private  float sliderCurrentFillAmount = 1f;
+
+    [Header("Score Components")]
+    [SerializeField] private TextMeshProUGUI ScoreText;
+
+    private int playerScore;
 
     private void Update() 
     {
@@ -19,5 +25,11 @@ public class GameController : MonoBehaviour
         timerImage.fillAmount = sliderCurrentFillAmount - (Time.deltaTime / gameTime);
 
         sliderCurrentFillAmount = timerImage.fillAmount;
+    }
+
+    public void UpdatePlayerScore(int asteroidHitPoints)
+    {
+        playerScore += asteroidHitPoints;
+        ScoreText.text = playerScore.ToString();
     }
 }
