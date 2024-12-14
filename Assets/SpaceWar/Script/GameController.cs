@@ -15,8 +15,22 @@ public class GameController : MonoBehaviour
 
     private int playerScore;
 
+    public enum GameState
+    {
+        Waiting,
+        Playing,
+        GameOver
+    }
+    public static GameState currentGameStatus;
+
+    private void Awake() 
+    {
+        currentGameStatus = GameState.Waiting;   
+    }
+
     private void Update() 
     {
+        if(currentGameStatus == GameState.Playing)
         AdjustTimer();
     }
     
@@ -29,6 +43,8 @@ public class GameController : MonoBehaviour
 
     public void UpdatePlayerScore(int asteroidHitPoints)
     {
+        if(currentGameStatus != GameState.Playing)
+            return;
         playerScore += asteroidHitPoints;
         ScoreText.text = playerScore.ToString();
     }

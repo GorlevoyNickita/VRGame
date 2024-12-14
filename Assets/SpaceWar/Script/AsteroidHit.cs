@@ -17,6 +17,9 @@ public class AsteroidHit : MonoBehaviour
     {
         Instantiate(asteroidExplosion, transform.position, transform.rotation);
 
+        if(GameController.currentGameStatus == GameController.GameState.Playing)
+        {
+            
         // calculate the score for hitting this asteroid
         float distanceFromPlayer = Vector3.Distance(transform.position, Vector3.zero);
         int bonusPoints= (int)distanceFromPlayer;
@@ -35,6 +38,9 @@ public class AsteroidHit : MonoBehaviour
         //pass score to GameController 
         gameController.UpdatePlayerScore(asteroidScore);
 
+        }
+
+        
         Destroy(this.gameObject);
     }
 }
