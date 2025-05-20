@@ -6,8 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/SpaceWar/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/SpaceWar/Art/Models/MainMenu/Scenes/1 Start Scene.unity
+    guid: d715d0c6b9713fd46bf3d92b19c61ca6
+  - enabled: 1
+    path: Assets/Scenes/Part 12 Swapping Movement.unity
+    guid: dfeaaceb6fb5542408d132ac2270d5c3
+  - enabled: 1
+    path: Assets/SpaceWar/Scenes/SpaceWar_Main.unity
+    guid: d667df659eb47074fbfa9fcd28058c2c
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: a0f4680d9774e5e47be4546d9f181bb2,
       type: 2}
