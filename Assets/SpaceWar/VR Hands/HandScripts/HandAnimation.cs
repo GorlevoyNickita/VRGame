@@ -8,7 +8,7 @@ public class HandAnimation : MonoBehaviour
     [SerializeField] private InputActionReference pinchAction;
     private Animator animator;
 
-    private void OnEnable()
+/*    private void OnEnable()
     {
         //grip
         gripAction.action.performed += Gripping;
@@ -17,7 +17,7 @@ public class HandAnimation : MonoBehaviour
         //pinch
         pinchAction.action.performed += Pinching;
         pinchAction.action.canceled += PinchRelease;
-    }
+    }*/
 
     private void Awake() => animator = GetComponent<Animator>();
 
